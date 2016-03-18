@@ -63,7 +63,8 @@ module.exports = function(targetPoint, points) {
   targetPoint.type = "Feature"
   points.forEach(function(pt) {
     if(Array.isArray(pt)){
-     pt = {type: "Feature", geometry: {type: "Point", coordinates: pt}} 
+     pt2 = {type: "Feature", geometry: {type: "Point", coordinates: pt}} 
+     pt = pt2
     }
     if(!nearestPoint) {
       nearestPoint = pt;
