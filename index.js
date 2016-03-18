@@ -60,9 +60,10 @@ var distance = require('turf-distance');
  */
 module.exports = function(targetPoint, points) {
   var nearestPoint;
+  targetPoint.type = "Feature"
   points.forEach(function(pt) {
     if(Array.isArray(pt)){
-     pt = {geometry: {type: "Point", coordinates: pt}} 
+     pt = {type: "Feature", geometry: {type: "Point", coordinates: pt}} 
     }
     if(!nearestPoint) {
       nearestPoint = pt;
